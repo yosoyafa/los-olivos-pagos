@@ -1,0 +1,174 @@
+[
+    {
+        "titulo": "Plenitud 1",
+        "condiciones_de_ingreso": "Edad máxima de ingreso para el titular hasta 70 y 364 días, sin límite de edad para la permanencia.",
+        "periodos_de_carencia": {
+            "statement": "El tiempo mínimo de permanencia para la prestación del servicio exequial según la causa del fallecimiento tanto para el afiliado principal como para su grupo familiar:",
+            "list": [
+                "Muerte accidental o violenta: Inicia a partir de a hora 24:00.",
+                "Muerte natural o suicidio: Después de 90 días.",
+                "Muerte por enfermedades preexistentes: Después de 180 días."
+            ],
+            "extra": "* La carencia inicia a partir del día en que se recauda la primera cuota resultante del proceso de afiliación."
+        },
+        "destino_final": {
+            "statement": "COBERTURA PARA CREMACIÓN ó ALQUILER DE LOTE ó BÓVEDA hasta ",
+            "value": "por 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en los demás municipios del país.\n\nSi posee lote o bóveda a perpetuidad, se pagarán derechos de administración hasta 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en todos los municipios del país, por una sola vez.\n\nEn la ciudad de San José del Guaviare se cubrirá el destino final hasta por la suma equivalente de 1 SMMLV. "
+        },
+        "parentesco": {
+            "statement": "¿Qué parentescos puedo vincular como beneficiarios?",
+            "value": [
+                "En este plan solo se cubre al titular."
+            ]
+        }
+    },
+    {
+        "titulo": "Plenitud 2",
+        "subtitulo": "Titular y beneficiario",
+        "condiciones_de_ingreso": "Edad máxima de ingreso para el titular y un beneficiario hasta 70 y 364 días, sin límite de edad para la permanencia ",
+        "periodos_de_carencia": {
+            "statement": "El tiempo mínimo de permanencia para la prestación del servicio exequial según la causa del fallecimiento tanto para el afiliado principal como para su grupo familiar:",
+            "list": [
+                "Muerte accidental o violenta: Inicia a partir de a hora 24:00.",
+                "Muerte natural o suicidio: Después de 90 días.",
+                "Muerte por enfermedades preexistentes: Después de 180 días."
+            ],
+            "extra": "* La carencia inicia a partir del día en que se recauda la primera cuota resultante del proceso de afiliación."
+        },
+        "destino_final": {
+            "statement": "COBERTURA PARA CREMACIÓN ó ALQUILER DE LOTE ó BÓVEDA hasta ",
+            "value": "por 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en los demás municipios del país.\n\nSi posee lote o bóveda a perpetuidad, se pagarán derechos de administración hasta 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en todos los municipios del país, por una sola vez.\n\nEn la ciudad de San José del Guaviare se cubrirá el destino final hasta por la suma equivalente de 1 SMMLV. "
+        },
+        "parentesco": {
+            "statement": "¿Qué parentescos puedo vincular como beneficiarios?",
+            "value": [
+                "En este plan se cubre al titular y un (1) beneficiario (Cónyuge o compañero permanente, hijo, hijastro, hermano o hermanastro)."
+            ]
+        }
+    },
+    {
+        "titulo": "Plenitud Familiar Soltero o Casado",
+        "subtitulo": "Titular y 3 beneficiarios",
+        "condiciones_de_ingreso": "Edad máxima de ingreso para el titular y cónyuge o compañero permanente hasta 70 y 364 días y los beneficiarios hasta 40 y 364 días, sin límite de edad para la permanencia.",
+        "periodos_de_carencia": {
+            "statement": "El tiempo mínimo de permanencia para la prestación del servicio exequial según la causa del fallecimiento tanto para el afiliado principal como para su grupo familiar:",
+            "list": [
+                "Muerte accidental o violenta: Inicia a partir de a hora 24:00.",
+                "Muerte natural o suicidio: Después de 90 días.",
+                "Muerte por enfermedades preexistentes: Después de 180 días."
+            ],
+            "extra": "* La carencia inicia a partir del día en que se recauda la primera cuota resultante del proceso de afiliación."
+        },
+        "destino_final": {
+            "statement": "COBERTURA PARA CREMACIÓN ó ALQUILER DE LOTE ó BÓVEDA hasta ",
+            "value": "por 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en los demás municipios del país.\n\nSi posee lote o bóveda a perpetuidad, se pagarán derechos de administración hasta 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en todos los municipios del país, por una sola vez.\n\nEn la ciudad de San José del Guaviare se cubrirá el destino final hasta por la suma equivalente de 1 SMMLV. "
+        },
+        "parentesco": {
+            "statement": "¿Qué parentescos puedo vincular como beneficiarios?",
+            "value": [
+                "PLAN SOLTERO: En este plan se cubre al titular y hermanos desde el sexto mes de gestación.",
+                "PLAN CASADO:  En este plan se cubre al titular, cónyuge o compañero permanente, hijos."
+            ],
+            "extra": "* máximo 3 beneficiarios contando el Cónyuge o compañero permanente + titular."
+        }
+    },
+    {
+        "titulo": "Plenitud Básico Soltero o Casado",
+        "condiciones_de_ingreso": "Edad máxima de ingreso para el titular y cónyuge o compañero permanente hasta 70 y 364 días y los beneficiarios hasta 40 y 364 días, sin límite de edad para la permanencia.",
+        "periodos_de_carencia": {
+            "statement": "El tiempo mínimo de permanencia para la prestación del servicio exequial según la causa del fallecimiento tanto para el afiliado principal como para su grupo familiar:",
+            "list": [
+                "Muerte accidental o violenta: Inicia a partir de a hora 24:00.",
+                "Muerte natural o suicidio: Después de 90 días.",
+                "Muerte por enfermedades preexistentes: Después de 180 días."
+            ],
+            "extra": "* La carencia inicia a partir del día en que se recauda la primera cuota resultante del proceso de afiliación."
+        },
+        "destino_final": {
+            "statement": "COBERTURA PARA CREMACIÓN ó ALQUILER DE LOTE ó BÓVEDA hasta ",
+            "value": "por 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en los demás municipios del país.\n\nSi posee lote o bóveda a perpetuidad, se pagarán derechos de administración hasta 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en todos los municipios del país, por una sola vez.\n\nEn la ciudad de San José del Guaviare se cubrirá el destino final hasta por la suma equivalente de 1 SMMLV. "
+        },
+        "parentesco": {
+            "statement": "¿Qué parentescos puedo vincular como beneficiarios?",
+            "value": [
+                "SOLTERO: En este plan se cubre al titular y hermanos desde el sexto mes de gestación.",
+                "CASADO:  En este plan se cubre al titular, cónyuge o compañero permanente, e hijos."
+            ],
+            "extra": "* No hay limites en la cantidad de hermanos o hijos."
+        }
+    },
+    {
+        "titulo": "Plenitud con Padres y/o Suegros",
+        "condiciones_de_ingreso": "Edad máxima de ingreso para el titular y cónyuge o compañero permanente hasta 70 y 364 días y los beneficiarios (Hijos – Hermanos) hasta 40 y 364 días, padres y/o suegros sólo dos de estos parentescos hasta 74 años y 364 días sin límite de edad para la permanencia.",
+        "periodos_de_carencia": {
+            "statement": "El tiempo mínimo de permanencia para la prestación del servicio exequial según la causa del fallecimiento tanto para el afiliado principal como para su grupo familiar:",
+            "list": [
+                "Muerte accidental o violenta: Inicia a partir de a hora 24:00.",
+                "Muerte natural o suicidio: Después de 90 días.",
+                "Muerte por enfermedades preexistentes: Después de 180 días."
+            ],
+            "extra": "* La carencia inicia a partir del día en que se recauda la primera cuota resultante del proceso de afiliación."
+        },
+        "destino_final": {
+            "statement": "COBERTURA PARA CREMACIÓN ó ALQUILER DE LOTE ó BÓVEDA hasta ",
+            "value": "por 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en los demás municipios del país.\n\nSi posee lote o bóveda a perpetuidad, se pagarán derechos de administración hasta 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en todos los municipios del país, por una sola vez.\n\nEn la ciudad de San José del Guaviare se cubrirá el destino final hasta por la suma equivalente de 1 SMMLV. "
+        },
+        "parentesco": {
+            "statement": "¿Qué parentescos puedo vincular como beneficiarios?",
+            "value": [
+                "SOLTERO: Hermanos desde el sexto mes de gestación, cobertura de hasta 40 años y 364 días.\nPadres hasta 74 años y 364 días.",
+                "CASADO:  Titular, cónyuge o compañero permanente desde 18 años hasta 70 años y 364 días.\nHijos desde el sexto mes de gestación, cobertura hasta 40 años y 364 días.\nPadres y/o suegros sólo dos de estos parentescos hasta 74 años y 364 días."
+            ],
+            "extra": "* No hay límites en la cantidad de hermanos o hijos."
+        }
+    },
+    {
+        "titulo": "Plan Unidos",
+        "subtitulo": "Titular y 6 beneficiarios",
+        "condiciones_de_ingreso": "Edad máxima de ingreso para el Afiliado principal y beneficiarios hasta los 70 años y 364 días y sin límite de edad de permanencia.\nEl grupo protegido debe estar conformado por un máximo de siete (7) personas.",
+        "periodos_de_carencia": {
+            "statement": "El tiempo mínimo de permanencia para la prestación del servicio exequial según la causa del fallecimiento tanto para el afiliado principal como para su grupo familiar:",
+            "list": [
+                "Muerte accidental o violenta: Inicia a partir de a hora 24:00.",
+                "Muerte natural o suicidio: Después de 90 días.",
+                "Muerte por enfermedades preexistentes: Después de 366 días."
+            ],
+            "extra": "* La carencia inicia a partir del día en que se recauda la primera cuota resultante del proceso de afiliación."
+        },
+        "destino_final": {
+            "statement": "COBERTURA PARA CREMACIÓN ó ALQUILER DE LOTE ó BÓVEDA hasta ",
+            "value": "por 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en los demás municipios del país.\n\nSi posee lote o bóveda a perpetuidad, se pagarán derechos de administración hasta 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en todos los municipios del país, por una sola vez.\n\nEn la ciudad de San José del Guaviare se cubrirá el destino final hasta por la suma equivalente de 1 SMMLV. "
+        },
+        "parentesco": {
+            "statement": "¿Qué parentescos puedo vincular como beneficiarios?",
+            "value": [
+                "Cónyuge o compañero (a) permanente, hijos, padres, hermanos, suegros, cuñados, yernos, nueras, hijastros, nietos, hermanastros, padrastro, madrastra, tíos, bisnietos, abuelos, sobrinos y primos del afiliado principal."
+            ]
+        }
+    },
+    {
+        "titulo": "Plan Unidos 10",
+        "subtitulo": "Titular y 9 beneficiarios",
+        
+        "condiciones_de_ingreso": "Edad máxima de ingreso para el afiliado principal, 70 años y 364 días de edad de ingreso y 9 beneficiarios, donde 2 podrán ingresar hasta los 75 años y 364 días de edad de ingreso, estos beneficiarios serán padres, suegros o cónyuge y los otros 7 beneficiarios ingresarán con edad máxima de 65 años y 364 días.\nEl grupo protegido debe estar conformado por un máximo de diez (10) personas.",
+        "periodos_de_carencia": {
+            "statement": "El tiempo mínimo de permanencia para la prestación del servicio exequial según la causa del fallecimiento tanto para el afiliado principal como para su grupo familiar:",
+            "list": [
+                "Muerte accidental o violenta: Inicia a partir de a hora 24:00.",
+                "Muerte natural o suicidio: Después de 90 días.",
+                "Muerte por enfermedades preexistentes: Después de 366 días."
+            ],
+            "extra": "* La carencia inicia a partir del día en que se recauda la primera cuota resultante del proceso de afiliación."
+        },
+        "destino_final": {
+            "statement": "COBERTURA PARA CREMACIÓN ó ALQUILER DE LOTE ó BÓVEDA hasta ",
+            "value": "por 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en los demás municipios del país.\n\nSi posee lote o bóveda a perpetuidad, se pagarán derechos de administración hasta 2.3 SMMLV en ciudades capitales y hasta por 1 SMMLV en todos los municipios del país, por una sola vez.\n\nEn la ciudad de San José del Guaviare se cubrirá el destino final hasta por la suma equivalente de 1 SMMLV. "
+        },
+        "parentesco": {
+            "statement": "¿Qué parentescos puedo vincular como beneficiarios?",
+            "value": [
+                "Afiliado principal, el cónyuge o compañero (a) permanente, h os, padres, hermanos, suegros, cuñados, yernos, nueras, h astros, nietos, hermanastros, padrastro, madrastra, tíos, bisnietos, abuelos, sobrinos y primos del afiliado principal."
+            ]
+        }
+    }
+]

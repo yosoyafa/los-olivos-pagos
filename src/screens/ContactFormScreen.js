@@ -1,28 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, ScrollView, TextInput, Button, Alert, StyleSheet, TouchableOpacity, Linking } from 'react-native';
+import { Text, View, ScrollView, Alert, StyleSheet, TouchableOpacity, Linking } from 'react-native';
+import { TextInput, Button } from 'react-native-paper';
 import CheckBox from '@react-native-community/checkbox';
 import { useForm } from 'react-hook-form';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const ContactFormScreen = (props) => {
+const ContactFormScreen = ({ route, navigation }) => {
 
     const terminos = 'https://www.villavicencio.losolivos.co/node/11418';
 
     //const [crm, setCrm] = useState(null);
+    let plan;
 
-    const { register, setValue, handleSubmit, errors } = useForm()
+    if (route.params) {
+        plan = route.params.plan;
+    }
+
+    const { register, setValue, handleSubmit, errors } = useForm();
     const onSubmit = async (data) => {
-
-
-
         let resp = 'fail';
-
         try {
-            let response = await fetch(`https://ws.crmolivosvillavicencio.com/app/inserta_contacto.php?nombre=${data.nombre}&cedula=${data.cedula}&telefono=${data.telefono}&correo=${data.correo}&ttmtodatos=${data.ttmtodatos}`);
+            let response = await fetch(`https://ws.crmolivosvillavicencio.com/app/inserta_contacto.php?nombre=${data.nombre}&cedula=${data.cedula}&telefono=${data.telefono}&correo=${data.correo}&ttmtodatos=${data.ttmtodatos}&nombreplan=general`);
+            if (plan) {
+                response = await fetch(`https://ws.crmolivosvillavicencio.com/app/inserta_contacto.php?nombre=${data.nombre}&cedula=${data.cedula}&telefono=${data.telefono}&correo=${data.correo}&ttmtodatos=${data.ttmtodatos}&nombreplan=${plan}`);
+            }
             let json = await response.json();
             console.log(json);
             resp = json.estado;
         } catch (error) {
-            console.error(error);
+            Alert.alert('Fallo', 'No se pudo completar tu solicitud, intenta mas tarde');
         }
         console.log(resp);
         if (resp === 'successful') {
@@ -30,7 +36,6 @@ const ContactFormScreen = (props) => {
         } else {
             Alert.alert('Fallo', 'No se pudo completar tu solicitud, intenta mas tarde');
         }
-
     };
 
     useEffect(() => {
@@ -44,34 +49,63 @@ const ContactFormScreen = (props) => {
     const [check, setCheck] = useState(false);
 
     return <ScrollView>
+        {!plan && <View style={{ height: 55, backgroundColor: 'white', elevation: 2 }}>
+            <Text style={{ marginTop: 15, marginStart: 15, fontWeight: 'bold', fontSize: 20 }}>Deja tus datos</Text>
+            <Icon style={{ position: 'absolute', top: 15, right: 15, zIndex: 999 }} name='menu' size={30} onPress={() => navigation.openDrawer()} />
+        </View>}
         <View style={styles.container}>
-
-            <Text style={styles.text}>Nombre</Text>
             <TextInput
+                theme={{
+                    colors: {
+                        primary: '#009366',
+                        accent: '#b58603',
+                    }
+                }}
+                mode='outlined'
                 style={styles.input}
-                underlineColorAndroid='transparent'
+                label='Nombre'
                 onChangeText={text => setValue('nombre', text, true)}
             />
 
-            <Text style={styles.text}>Cédula</Text>
             <TextInput
-                style={styles.input}
                 keyboardType={'numeric'}
-                underlineColorAndroid='transparent'
+                theme={{
+                    colors: {
+                        primary: '#009366',
+                        accent: '#b58603',
+                    }
+                }}
+                style={styles.input}
+                label='Cédula'
+                mode='outlined'
                 onChangeText={text => setValue('cedula', text, true)}
             />
 
-            <Text style={styles.text}>Teléfono</Text>
             <TextInput
+                theme={{
+                    colors: {
+                        primary: '#009366',
+                        accent: '#b58603',
+                    }
+                }}
+                label='Teléfono'
                 style={styles.input}
+                mode='outlined'
                 underlineColorAndroid='transparent'
                 keyboardType={'numeric'}
                 onChangeText={text => setValue('telefono', text, true)}
             />
 
-            <Text style={styles.text}>Correo</Text>
             <TextInput
+                theme={{
+                    colors: {
+                        primary: '#009366',
+                        accent: '#b58603',
+                    }
+                }}
                 style={styles.input}
+                label='Correo'
+                mode='outlined'
                 underlineColorAndroid='transparent'
                 onChangeText={text => setValue('correo', text, true)}
             />
@@ -93,13 +127,18 @@ const ContactFormScreen = (props) => {
                     <Text style={styles.link}>Tratamiento de Datos</Text>
                 </TouchableOpacity>
             </View>
-
             <Button
-                title='enviar'
-                color='#ffb725'
+                theme={{
+                    colors: {
+                        primary: '#009366',
+                        accent: '#b58603',
+                    }
+                }}
+                mode='contained'
                 disabled={false && !check}
-                onPress={handleSubmit(onSubmit)}
-            />
+                onPress={handleSubmit(onSubmit)}>
+                Enviar
+                </Button>
         </View>
     </ScrollView >
 };
@@ -120,12 +159,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         marginBottom: 15,
         marginStart: 15,
-        marginEnd: 15,
-        height: 40,
-        borderColor: '#000000',
-        borderWidth: 1,
-        borderRadius: 5,
-        paddingStart: 10
+        marginEnd: 15
     },
     link: {
         textDecorationLine: 'underline',

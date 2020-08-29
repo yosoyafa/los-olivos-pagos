@@ -3,7 +3,8 @@ import { View, StyleSheet } from 'react-native';
 import WebViewComponent from '../components/WebViewComponent';
 
 const AfiliationScreen = (props) => {
-    const {url} = props.route.params;
+    const url = 'https://docs.google.com/forms/d/e/1FAIpQLScVrr-wpQWw4r8l6xFRkBAjW_B8slsvMjQ26Kw11stGgPdkIA/viewform';
+    //const url = props.url;
     return (<View style={styles.view}>
         <WebViewComponent
             url={url}
