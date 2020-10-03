@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { View, Image, Text, StyleSheet, ScrollView, RefreshControl } from 'react-native';
-import { FAB, Title, Paragraph, Caption } from 'react-native-paper';
+import { FAB, Title, Paragraph, Caption, Button } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import RNImmediatePhoneCall from 'react-native-immediate-phone-call';
 
@@ -10,7 +10,7 @@ import Context from '../context/Context';
 
 const HomeScreen = ({ navigation }) => {
 
-    const { getPlanes, getBeneficiarios, invitado, usuario, numeroEmergencia, planes, beneficiarios } = useContext(Context);
+    const { modifyLogged, modifyInvitado, modifyUsuario, getPlanes, getBeneficiarios, invitado, usuario, numeroEmergencia, planes, beneficiarios } = useContext(Context);
 
     useEffect(() => {
         if (usuario) {
@@ -23,9 +23,9 @@ const HomeScreen = ({ navigation }) => {
 
     const onRefresh = () => {
         refreshOn();
-        if(usuario){
+        if (usuario) {
             getInfo(refreshOff);
-        }else{
+        } else {
             refreshOff();
         }
     }
@@ -50,12 +50,20 @@ const HomeScreen = ({ navigation }) => {
         RNImmediatePhoneCall.immediatePhoneCall(numeroEmergencia);
     };
 
-    const Carousels = () => {
+    const Body = () => {
         if (invitado !== '0') {
             return <View style={{ flex: 1, justifyContent: 'center', paddingHorizontal: 40 }}>
                 <Caption style={{ textAlign: 'center', fontSize: 16 }}>
                     Has ingresado como invitado. Inicia sesión para conocer sobre tu contratos.
                 </Caption>
+                <View style={{ marginTop: 30 }}>
+                    <Button
+                        theme={{ colors: { primary: '#009366' } }}
+                        icon='login'
+                        onPress={() => { modifyLogged('0'); modifyInvitado('0'); modifyUsuario(null) }}>
+                        Iniciar Sesión
+                    </Button>
+                </View>
             </View>;
         } else {
             return (
@@ -108,7 +116,7 @@ const HomeScreen = ({ navigation }) => {
                             <Paragraph style={{ marginRight: 20, textAlign: 'justify' }}>SERFUNLLANOS Los Olivos ha creado para usted una aplicación que le permitirá realizar pagos y afiliaciones en línea.{'\n'}Explora el menú lateral para conocer todo lo que te ofrecemos.</Paragraph>
                         </View>
 
-                        <Carousels />
+                        <Body />
 
                         {/*OBITUARIO
                         <Text style={styles.titulos}>Obituario</Text>

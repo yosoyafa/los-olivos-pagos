@@ -10,6 +10,8 @@ export const Provider = ({ children }) => {
     const [usuario, setUsuario] = useState(null);
     const [obituario, setObituario] = useState([]);
     const [planes, setPlanes] = useState([]);
+    const [jsonPlanes, setJsonPlanes] = useState([]);
+    const [sedes, setSedes] = useState([]);
     const [beneficiarios, setBeneficiarios] = useState([]);
     const [numeroEmergencia, setNumeroEmergencia] = useState('018000915286');
 
@@ -92,6 +94,28 @@ export const Provider = ({ children }) => {
         }
     };
 
+    const getSedes = async (cc) => {
+        try {
+            let response = await fetch(`https://ws.crmolivosvillavicencio.com/app/`);
+            let json = await response.json();
+            //console.log(json);
+            setSedes(json.results);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const getJsonPlanes = async (cc) => {
+        try {
+            let response = await fetch(`https://ws.crmolivosvillavicencio.com/app/`);
+            let json = await response.json();
+            //console.log(json);
+            setJsonPlanes(json.results);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
         <Context.Provider value={{
             setUp,
@@ -101,6 +125,10 @@ export const Provider = ({ children }) => {
             getObituario,
             getPlanes,
             getBeneficiarios,
+            getJsonPlanes,
+            getSedes,
+            sedes,
+            jsonPlanes,
             usuario,
             invitado,
             logged,

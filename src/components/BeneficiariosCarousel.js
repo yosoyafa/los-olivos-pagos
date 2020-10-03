@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Text, View, SafeAreaView, TouchableOpacity, FlatList } from 'react-native';
+import { Text, View, SafeAreaView, FlatList } from 'react-native';
 import { Caption } from 'react-native-paper';
 
 import Context from '../context/Context';
@@ -43,35 +43,6 @@ const PlansCarousel = (props) => {
                                 );
                             }}
                         />
-                        /*<Carousel
-                            layout={"default"}
-                            ref={ref => this.carousel = ref}
-                            data={beneficiarios}
-                            sliderWidth={250}
-                            itemWidth={300}
-                            renderItem={({ item, index }) =>
-                                <View style={{
-                                    backgroundColor: 'white',
-                                    borderRadius: 5,
-                                    height: 185,
-                                    padding: 0,
-                                    marginLeft: 20,
-                                    marginRight: 20
-                                }}>
-                                    <View style={{ flex: 1, margin: 10 }}>
-                                        <View style={{ flex: 1, margin: 5, marginTop: 15 }}>
-                                            {item.poliza ? <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{item.poliza}</Text> : null}
-                                            <Text style={{ fontWeight: 'bold', fontSize: 16, color: '#009366', marginBottom: 5 }}>{item.asegurado}</Text>
-                                            <Caption>{item.parentesco}</Caption>
-                                            <Text style={{ fontSize: 14 }}>Documento: {item.documento}</Text>
-                                            <Text style={{ marginBottom: 5 }}>Fecha de nacimiento:{' '}{item.fechanacimiento}</Text>
-                                            <Text>Edad:{' '}{item.edad}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                            }
-                            onSnapToItem={index => setActiveIndex(index)}
-                        />*/
                         :
                         null
                     }

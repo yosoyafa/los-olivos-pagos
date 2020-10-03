@@ -132,7 +132,7 @@ const LoginScreen = (props) => {
                         onPress={() => login()}
                         style={{ marginBottom: 10 }}>
                         Ingresar
-                </Button>
+                    </Button>
                     <TouchableOpacity style={{ alignSelf: 'center', marginBottom: 40 }} onPress={() => { setDialogVisible(true) }}>
                         <Text
                             style={{ color: '#b58603', textDecorationLine: 'underline' }}>
