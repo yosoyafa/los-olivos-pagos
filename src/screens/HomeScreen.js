@@ -113,7 +113,7 @@ const HomeScreen = ({ navigation }) => {
                         <View style={{ marginStart: 20 }}>
                             <Title style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 15, color: '#b58603' }}>
                                 Central Cooperativa del Llano{'\n'}Los Olivos</Title>
-                            <Paragraph style={{ marginRight: 20, textAlign: 'justify' }}>SERFUNLLANOS Los Olivos ha creado para usted una aplicación que le permitirá realizar pagos y afiliaciones en línea.{'\n'}Explora el menú lateral para conocer todo lo que te ofrecemos.</Paragraph>
+                            <Paragraph style={{ marginRight: 20, textAlign: 'justify' }}>SERFUNLLANOS Los Olivos ha creado para usted una aplicación que le permitirá realizar pagos y afiliaciones en línea..{'\n'}Explora el menú lateral para conocer todo lo que te ofrecemos.</Paragraph>
                         </View>
 
                         <Body />

@@ -5,6 +5,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import SplashScreen from 'react-native-splash-screen';
+import codePush from 'react-native-code-push';
 
 import SedesScreen from './src/screens/SedesScreen';
 import ContactFormScreen from './src/screens/ContactFormScreen';
@@ -228,5 +229,7 @@ const app = () => {
     </Provider>
   );
 };
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
+app = codePush(codePushOptions)(app);
 
 export default app;
