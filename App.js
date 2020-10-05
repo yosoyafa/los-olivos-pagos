@@ -230,6 +230,6 @@ const app = () => {
   );
 };
 
-app = codePush(app);
+//app = codePush(app);
 
-export default app;
+export default codePush(app);
