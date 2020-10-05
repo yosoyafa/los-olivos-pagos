@@ -14,6 +14,7 @@ export const Provider = ({ children }) => {
     const [sedes, setSedes] = useState([]);
     const [beneficiarios, setBeneficiarios] = useState([]);
     const [numeroEmergencia, setNumeroEmergencia] = useState('018000915286');
+    const [linksPagos, setLinksPagos] = useState([]);
 
     const setUp = async (callback) => {
         try {
@@ -29,7 +30,8 @@ export const Provider = ({ children }) => {
             if (mInvitado !== null) {
                 setInvitado(mInvitado);
             }
-            callback()
+            getLinksPagos();
+            callback();
         } catch (e) {
             console.log(e);
         }
@@ -116,6 +118,16 @@ export const Provider = ({ children }) => {
         }
     };
 
+    const getLinksPagos = async () => {
+        try {
+            let response = await fetch(`https://ws.crmolivosvillavicencio.com/app/getParametros.php?parametro=linkpagos1`);
+            let json = await response.json();
+            setLinksPagos(json);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
         <Context.Provider value={{
             setUp,
@@ -127,6 +139,7 @@ export const Provider = ({ children }) => {
             getBeneficiarios,
             getJsonPlanes,
             getSedes,
+            getLinksPagos,
             sedes,
             jsonPlanes,
             usuario,
@@ -135,7 +148,8 @@ export const Provider = ({ children }) => {
             obituario,
             planes,
             beneficiarios,
-            numeroEmergencia
+            numeroEmergencia,
+            linksPagos,
         }}>
             {children}
         </Context.Provider>

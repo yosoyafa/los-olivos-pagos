@@ -1,25 +1,39 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import WebViewComponent from '../components/WebViewComponent';
-import { View, Text } from 'react-native';
-
-const pse = () => {
-    return <WebViewComponent url={'https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=4319'} />
-};
-
-const aval = () => {
-    return <WebViewComponent url={'https://www.avalpaycenter.com/wps/portal/portal-de-pagos/web/pagos-aval/resultado-busqueda/realizar-pago?idConv=00000026'} />
-};
+import { View, Text, ActivityIndicator } from 'react-native';
+import Context from '../context/Context';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createMaterialTopTabNavigator();
 
-const PaymentScreen = ({ route, navigation }) => {
+const PaymentScreen = ({ navigation }) => {
+
+    const { getLinksPagos, linksPagos } = useContext(Context);
+
+    useEffect(() => {
+        getLinksPagos();
+    }, []);
+
     return <View style={{ backgroundColor: 'white', flex: 1 }}>
-        {false && <Text style={{ fontSize: 22, fontWeight: 'bold', marginBottom: 15, color: '#b58603' }}>Pagos</Text>}
-        <Tab.Navigator keyboardDismissMode={'auto'}>
-            <Tab.Screen name="PSE" component={pse} />
-            <Tab.Screen name="AvalPay Center" component={aval} />
-        </Tab.Navigator>
+        <Text style={{ fontSize: 22, fontWeight: 'bold', marginStart: 20, marginTop: 20, color: '#b58603' }}>PAGOS</Text>
+        <Icon style={{ position: 'absolute', top: 20, right: 20, zIndex: 999 }} name='menu' size={30} onPress={() => navigation.openDrawer()} />
+        {console.log('links: '+linksPagos)}
+        {linksPagos ?
+            <Tab.Navigator
+                keyboardDismissMode={'auto'}
+                tabBarOptions={{
+                    activeTintColor: '#009366',
+                }}>
+                {linksPagos.map(link => {
+                    const name = link.name;
+                    const comp = () => <WebViewComponent url={link.valorparametro} />
+                    return <Tab.Screen name={name} component={comp} />
+                })}
+            </Tab.Navigator>
+            :
+            <ActivityIndicator size="large" />
+        }
     </View>
 };
 
