@@ -81,7 +81,7 @@ const HomeStack = () => {
 
 const MyDrawer = () => {
   return (
-    <Drawer.Navigator drawerContent={props => <DrawerContent {...props} /> } drawerContentOptions={{activeTintColor: '#009366',}}>
+    <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />} drawerContentOptions={{ activeTintColor: '#009366', }}>
       <Drawer.Screen
         name='Home'
         options={{
@@ -230,6 +230,6 @@ const app = () => {
   );
 };
 
-//app = codePush(app);
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
 
-export default codePush(app);
+export default codePush(codePushOptions)(app);
