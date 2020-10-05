@@ -229,7 +229,7 @@ const app = () => {
     </Provider>
   );
 };
-let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
-app = codePush(codePushOptions)(app);
+
+app = codePush(app);
 
 export default app;
