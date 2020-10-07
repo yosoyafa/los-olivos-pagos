@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import 'react-native-gesture-handler';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import { Title, Caption, Drawer } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -13,6 +13,10 @@ const DrawerContent = (props) => {
 
   return <View style={{ flex: 1 }}>
     <DrawerContentScrollView {...props} >
+      <Image
+        style={styles.image}
+        source={require('../../assets/logorgb.png')}
+      />
       <View style={styles.drawerContent}>
         {invitado === '0' && logged === '1' && usuario ?
           <View style={styles.userInfoSection}>
@@ -28,7 +32,7 @@ const DrawerContent = (props) => {
         }
         <Drawer.Section style={styles.drawerSection}>
           <View style={{ marginLeft: 15 }}>
-            <DrawerItemList {...props}/>
+            <DrawerItemList {...props} />
           </View>
         </Drawer.Section>
       </View>
@@ -50,6 +54,12 @@ const DrawerContent = (props) => {
 const styles = StyleSheet.create({
   drawerContent: {
     flex: 1,
+  },
+  image: {
+    margin: 5,
+    alignSelf: 'center',
+    width: '70%',
+    height: '20%'
   },
   userInfoSection: {
     paddingLeft: 20,
