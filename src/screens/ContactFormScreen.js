@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, ScrollView, Alert, StyleSheet, TouchableOpacity, Linking } from 'react-native';
+import { Text, View, ScrollView, Alert, StyleSheet, TouchableOpacity, Linking, SafeAreaView } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 import CheckBox from '@react-native-community/checkbox';
 import { useForm } from 'react-hook-form';
@@ -48,99 +48,101 @@ const ContactFormScreen = ({ route, navigation }) => {
 
     const [check, setCheck] = useState(false);
 
-    return <ScrollView>
-        {!plan && <View style={{ height: 55, backgroundColor: 'white', elevation: 2 }}>
-            <Text style={{ marginTop: 15, marginStart: 15, fontWeight: 'bold', fontSize: 20 }}>Deja tus datos</Text>
-            <Icon style={{ position: 'absolute', top: 15, right: 15, zIndex: 999 }} name='menu' size={30} onPress={() => navigation.openDrawer()} />
-        </View>}
-        <View style={styles.container}>
-            <TextInput
-                theme={{
-                    colors: {
-                        primary: '#009366',
-                        accent: '#b58603',
-                    }
-                }}
-                mode='outlined'
-                style={styles.input}
-                label='Nombre'
-                onChangeText={text => setValue('nombre', text, true)}
-            />
-
-            <TextInput
-                keyboardType={'numeric'}
-                theme={{
-                    colors: {
-                        primary: '#009366',
-                        accent: '#b58603',
-                    }
-                }}
-                style={styles.input}
-                label='Cédula'
-                mode='outlined'
-                onChangeText={text => setValue('cedula', text, true)}
-            />
-
-            <TextInput
-                theme={{
-                    colors: {
-                        primary: '#009366',
-                        accent: '#b58603',
-                    }
-                }}
-                label='Teléfono'
-                style={styles.input}
-                mode='outlined'
-                underlineColorAndroid='transparent'
-                keyboardType={'numeric'}
-                onChangeText={text => setValue('telefono', text, true)}
-            />
-
-            <TextInput
-                theme={{
-                    colors: {
-                        primary: '#009366',
-                        accent: '#b58603',
-                    }
-                }}
-                style={styles.input}
-                label='Correo'
-                mode='outlined'
-                underlineColorAndroid='transparent'
-                onChangeText={text => setValue('correo', text, true)}
-            />
-
-            {(errors.nombre || errors.cedula || errors.telefono || errors.correo) && <Text style={{ color: '#ff0000' }}>Todos los campos son requeridos.</Text>}
-
-
-            <View style={styles.checkBoxContainer}>
-                <CheckBox
-                    value={check}
-                    onValueChange={(value) => {
-                        setCheck(value);
-                        setValue('ttmtodatos', value, true);
+    return <SafeAreaView>
+        <ScrollView>
+            {!plan && <View style={{ height: 55, backgroundColor: 'white', elevation: 2 }}>
+                <Text style={{ marginTop: 15, marginStart: 15, fontWeight: 'bold', fontSize: 20 }}>Deja tus datos</Text>
+                <Icon style={{ position: 'absolute', top: 15, right: 15, zIndex: 999 }} name='menu' size={30} onPress={() => navigation.openDrawer()} />
+            </View>}
+            <View style={styles.container}>
+                <TextInput
+                    theme={{
+                        colors: {
+                            primary: '#009366',
+                            accent: '#b58603',
+                        }
                     }}
+                    mode='outlined'
+                    style={styles.input}
+                    label='Nombre'
+                    onChangeText={text => setValue('nombre', text, true)}
                 />
-                <Text >Autorizo el </Text>
-                <TouchableOpacity
-                    onPress={() => { Linking.openURL(terminos) }}>
-                    <Text style={styles.link}>Tratamiento de Datos</Text>
-                </TouchableOpacity>
-            </View>
-            <Button
-                theme={{
-                    colors: {
-                        primary: '#009366',
-                        accent: '#b58603',
-                    }
-                }}
-                mode='contained'
-                disabled={false && !check}
-                onPress={handleSubmit(onSubmit)}>
-                Enviar
+
+                <TextInput
+                    keyboardType={'numeric'}
+                    theme={{
+                        colors: {
+                            primary: '#009366',
+                            accent: '#b58603',
+                        }
+                    }}
+                    style={styles.input}
+                    label='Cédula'
+                    mode='outlined'
+                    onChangeText={text => setValue('cedula', text, true)}
+                />
+
+                <TextInput
+                    theme={{
+                        colors: {
+                            primary: '#009366',
+                            accent: '#b58603',
+                        }
+                    }}
+                    label='Teléfono'
+                    style={styles.input}
+                    mode='outlined'
+                    underlineColorAndroid='transparent'
+                    keyboardType={'numeric'}
+                    onChangeText={text => setValue('telefono', text, true)}
+                />
+
+                <TextInput
+                    theme={{
+                        colors: {
+                            primary: '#009366',
+                            accent: '#b58603',
+                        }
+                    }}
+                    style={styles.input}
+                    label='Correo'
+                    mode='outlined'
+                    underlineColorAndroid='transparent'
+                    onChangeText={text => setValue('correo', text, true)}
+                />
+
+                {(errors.nombre || errors.cedula || errors.telefono || errors.correo) && <Text style={{ color: '#ff0000' }}>Todos los campos son requeridos.</Text>}
+
+
+                <View style={styles.checkBoxContainer}>
+                    <CheckBox
+                        value={check}
+                        onValueChange={(value) => {
+                            setCheck(value);
+                            setValue('ttmtodatos', value, true);
+                        }}
+                    />
+                    <Text >Autorizo el </Text>
+                    <TouchableOpacity
+                        onPress={() => { Linking.openURL(terminos) }}>
+                        <Text style={styles.link}>Tratamiento de Datos</Text>
+                    </TouchableOpacity>
+                </View>
+                <Button
+                    theme={{
+                        colors: {
+                            primary: '#009366',
+                            accent: '#b58603',
+                        }
+                    }}
+                    mode='contained'
+                    disabled={false && !check}
+                    onPress={handleSubmit(onSubmit)}>
+                    Enviar
                 </Button>
-        </View>
-    </ScrollView >
+            </View>
+        </ScrollView >
+    </SafeAreaView>
 };
 
 const styles = StyleSheet.create({

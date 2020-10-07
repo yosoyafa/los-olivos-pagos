@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import WebViewComponent from '../components/WebViewComponent';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, Text, ActivityIndicator, SafeAreaView } from 'react-native';
 import Context from '../context/Context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -15,7 +15,7 @@ const PaymentScreen = ({ navigation }) => {
         getLinksPagos();
     }, []);
 
-    return <View style={{ backgroundColor: 'white', flex: 1 }}>
+    return <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
         <Text style={{ fontSize: 22, fontWeight: 'bold', marginStart: 20, marginTop: 20, color: '#b58603' }}>PAGOS</Text>
         <Icon style={{ position: 'absolute', top: 20, right: 20, zIndex: 999 }} name='menu' size={30} onPress={() => navigation.openDrawer()} />
         {console.log('links: '+linksPagos)}
@@ -34,7 +34,7 @@ const PaymentScreen = ({ navigation }) => {
             :
             <ActivityIndicator size="large" />
         }
-    </View>
+    </SafeAreaView>
 };
 
 export default PaymentScreen;

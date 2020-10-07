@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { Button, Paragraph } from 'react-native-paper';
 import call from 'react-native-phone-call'
@@ -149,7 +149,7 @@ const SedesScreen = ({ navigation }) => {
     };
 
     return (
-        <View style={{ flex: 1, zIndex: 1 }}>
+        <SafeAreaView style={{ flex: 1, zIndex: 1 }}>
             <Icon style={{ position: 'absolute', top: 20, right: 20, zIndex: 999 }} name='menu' size={30} onPress={() => navigation.openDrawer()} />
             <View style={{ flex: 1 }}>
                 <View style={{ margin: 20 }}>
@@ -188,7 +188,7 @@ const SedesScreen = ({ navigation }) => {
                     );
                 })}
             </Overlay>*/}
-        </View>
+        </SafeAreaView>
     );
 };
 

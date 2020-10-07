@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, FlatList, ScrollView, Text } from 'react-native';
+import { View, StyleSheet, FlatList, ScrollView, Text, SafeAreaView } from 'react-native';
 import { Button, Card as PaperCard } from 'react-native-paper';
 import { Overlay } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import planes from '../../data/planes.json';
 import servicio from '../../data/servicio.json';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const PlansScreen = ({ navigation }) => {
 
@@ -17,6 +18,7 @@ const PlansScreen = ({ navigation }) => {
             keyExtractor={item => item.titulo}
             renderItem={({ item }) => {
                 return (
+                    <TouchableOpacity onPress={() => { navigation.navigate('PlanDetails', { item: item }) }}>
                     <PaperCard style={{ margin: 20 }}>
                         <PaperCard.Title title={item.titulo} titleStyle={{ color: '#009366' }} subtitle={item.subtitulo ? item.subtitulo : null} />
                         <PaperCard.Content>
@@ -39,6 +41,7 @@ const PlansScreen = ({ navigation }) => {
                             </Button>
                         </PaperCard.Actions>
                     </PaperCard>
+                    </TouchableOpacity>
 
                     /*<Content padder>
                         <Card>
@@ -82,7 +85,7 @@ const PlansScreen = ({ navigation }) => {
     };
 
     return (
-        <>
+        <SafeAreaView style={{flex: 1}}>
             <View style={{ flex: 1 }}>
                 <Icon style={{ position: 'absolute', top: 20, right: 20, zIndex: 999 }} name='menu' size={30} onPress={() => navigation.openDrawer()} />
                 <View style={{ marginHorizontal: 20, marginVertical: 20 }}>
@@ -104,7 +107,7 @@ const PlansScreen = ({ navigation }) => {
                     })}
                 </ScrollView>
             </Overlay>
-        </>
+        </SafeAreaView>
     )
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
-import { View, Image, Text, StyleSheet, ScrollView, RefreshControl } from 'react-native';
+import { View, Image, Text, StyleSheet, ScrollView, RefreshControl, SafeAreaView } from 'react-native';
 import { FAB, Title, Paragraph, Caption, Button } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import RNImmediatePhoneCall from 'react-native-immediate-phone-call';
@@ -93,7 +93,7 @@ const HomeScreen = ({ navigation }) => {
 
     return (
         <>
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
 
                 <View style={styles.header}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginEnd: 20, marginBottom: 5 }}>
@@ -133,7 +133,7 @@ const HomeScreen = ({ navigation }) => {
                     label='Emergencia'
                     icon='alarm-light-outline'
                 />
-            </View >
+            </SafeAreaView >
         </>
     );
 };
