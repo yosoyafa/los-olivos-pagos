@@ -13,10 +13,10 @@ const DrawerContent = (props) => {
 
   return <View style={{ flex: 1 }}>
     <DrawerContentScrollView {...props} >
-      <Image
+      {false && <Image
         style={styles.image}
         source={require('../../assets/logorgb.png')}
-      />
+      />}
       <View style={styles.drawerContent}>
         {invitado === '0' && logged === '1' && usuario ?
           <View style={styles.userInfoSection}>

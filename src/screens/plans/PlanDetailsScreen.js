@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, ScrollView, Text, StyleSheet } from 'react-native';
 import { Button } from 'react-native-paper';
+import Analytics from 'appcenter-analytics';
 
 const PlanDetailsScreen = (props) => {
 
@@ -55,7 +56,10 @@ const PlanDetailsScreen = (props) => {
                 theme={{ colors: { primary: '#009366' } }}
                 icon='heart'
                 mode="contained"
-                onPress={() => props.navigation.navigate('Form', { plan: item.titulo })}
+                onPress={() => {
+                    props.navigation.navigate('Form', { plan: item.titulo });
+                    Analytics.trackEvent('Clic en adquirir', { nombre: item.titulo });
+                }}
                 style={{ marginVertical: 20 }}>
                 Adquirir
             </Button>

@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import planes from '../../data/planes.json';
 import servicio from '../../data/servicio.json';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import Analytics from 'appcenter-analytics';
 
 const PlansScreen = ({ navigation }) => {
 
@@ -18,29 +19,35 @@ const PlansScreen = ({ navigation }) => {
             keyExtractor={item => item.titulo}
             renderItem={({ item }) => {
                 return (
-                    <TouchableOpacity onPress={() => { navigation.navigate('PlanDetails', { item: item }) }}>
-                    <PaperCard style={{ margin: 20 }}>
-                        <PaperCard.Title title={item.titulo} titleStyle={{ color: '#009366' }} subtitle={item.subtitulo ? item.subtitulo : null} />
-                        <PaperCard.Content>
-                            {item.parentesco.value.map((text, index) => {
-                                return (
-                                    <Text style={{ fontSize: 15 }}>{text}</Text>
-                                );
-                            })}
-                        </PaperCard.Content>
-                        <PaperCard.Actions style={{ flexDirection: 'row-reverse' }}>
-                            <Button
-                                onPress={() => { navigation.navigate('PlanDetails', { item: item }) }}
-                                theme={{
-                                    colors: {
-                                        primary: '#b58603',
-                                    }
-                                }}
-                            >
-                                Ver Más
+                    <TouchableOpacity onPress={() => {
+                        Analytics.trackEvent('Clic en plan', { nombre: item.titulo });
+                        navigation.navigate('PlanDetails', { item: item })
+                    }}>
+                        <PaperCard style={{ margin: 20 }}>
+                            <PaperCard.Title title={item.titulo} titleStyle={{ color: '#009366' }} subtitle={item.subtitulo ? item.subtitulo : null} />
+                            <PaperCard.Content>
+                                {item.parentesco.value.map((text, index) => {
+                                    return (
+                                        <Text style={{ fontSize: 15 }}>{text}</Text>
+                                    );
+                                })}
+                            </PaperCard.Content>
+                            <PaperCard.Actions style={{ flexDirection: 'row-reverse' }}>
+                                <Button
+                                    onPress={() => {
+                                        navigation.navigate('PlanDetails', { item: item });
+                                        Analytics.trackEvent('Clic en plan', { nombre: item.titulo });
+                                    }}
+                                    theme={{
+                                        colors: {
+                                            primary: '#b58603',
+                                        }
+                                    }}
+                                >
+                                    Ver Más
                             </Button>
-                        </PaperCard.Actions>
-                    </PaperCard>
+                            </PaperCard.Actions>
+                        </PaperCard>
                     </TouchableOpacity>
 
                     /*<Content padder>
@@ -85,7 +92,7 @@ const PlansScreen = ({ navigation }) => {
     };
 
     return (
-        <SafeAreaView style={{flex: 1}}>
+        <SafeAreaView style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
                 <Icon style={{ position: 'absolute', top: 20, right: 20, zIndex: 999 }} name='menu' size={30} onPress={() => navigation.openDrawer()} />
                 <View style={{ marginHorizontal: 20, marginVertical: 20 }}>

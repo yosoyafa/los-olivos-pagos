@@ -18,6 +18,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import DrawerContent from './src/components/DrawerContent';
 import LoginScreen from './src/screens/auth/LoginScreen';
 import SignUpScreen from './src/screens/auth/SignUpScreen';
+import PlaneacionHomenajeScreen from './src/screens/PlaneacionHomenajeScreen';
 
 import Context, { Provider } from './src/context/Context';
 
@@ -165,6 +166,20 @@ const MyDrawer = () => {
           }
         }}
         component={ContactFormScreen}
+      />
+      <Drawer.Screen
+        name='Planeacion'
+        options={{
+          title: 'Planeación del Homenaje',
+          drawerIcon: ({ color, size }) => {
+            return <Icon
+              name='face-agent'
+              color={color}
+              size={size}
+            />
+          }
+        }}
+        component={PlaneacionHomenajeScreen}
       />
       <Drawer.Screen
         name='Info'
