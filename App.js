@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import FAIcon from 'react-native-vector-icons/FontAwesome5'
 import SplashScreen from 'react-native-splash-screen';
 import codePush from 'react-native-code-push';
 
@@ -171,9 +172,9 @@ const MyDrawer = () => {
         name='Planeacion'
         options={{
           title: 'Planeación del Homenaje',
-          drawerIcon: ({ color, size }) => {
-            return <Icon
-              name='face-agent'
+            drawerIcon: ({ color, size }) => {
+              return <FAIcon
+              name='pray'
               color={color}
               size={size}
             />
