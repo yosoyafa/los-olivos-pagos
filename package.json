@@ -30,7 +30,7 @@
     "md5": "^2.2.1",
     "react": "^16.13.1",
     "react-hook-form": "^5.6.0",
-    "react-native": "0.62.3",
+    "react-native": "0.70.4",
     "react-native-code-push": "^6.3.0",
     "react-native-dialog": "^5.6.0",
     "react-native-elements": "^2.0.1",
