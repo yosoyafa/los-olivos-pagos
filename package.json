@@ -7,7 +7,12 @@
     "ios": "react-native run-ios --simulator=\"iPhone 12 mini\"",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "pods": "npx pod install",
+    "deps": "npm i && cd ios && pod install && cd .. && npx jetify",
+    "android:release": "react-native run-android --variant=release",
+    "release:bundle": "cd android && ./gradlew bundleRelease && cd ..",
+    "release:apk": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd .."
   },
   "dependencies": {
     "@eva-design/eva": "^2.0.0",
