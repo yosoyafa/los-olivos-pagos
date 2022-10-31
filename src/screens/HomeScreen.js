@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react';
-import { View, Image, Text, StyleSheet, ScrollView, RefreshControl, SafeAreaView } from 'react-native';
+import React, { useState, useEffect, useContext } from 'react';
+import { View, Image, Text, StyleSheet, ScrollView, RefreshControl, SafeAreaView, Linking } from 'react-native';
 import { FAB, Title, Paragraph, Caption, Button } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import RNImmediatePhoneCall from 'react-native-immediate-phone-call';
@@ -50,8 +50,10 @@ const HomeScreen = ({ navigation }) => {
         RNImmediatePhoneCall.immediatePhoneCall(numeroEmergencia);
     };
 
+    const onActualizarDatos = () => Linking.openURL('https://docs.google.com/forms/d/e/1FAIpQLSfXYw2p39mLofN-XJH9tJe8OtuGDcKyfxDvd044tc9YnTCcXA/viewform')
+
     const Body = () => {
-        if (invitado !== '0') {
+        if (invitado === '0') {
             return <View style={{ flex: 1, justifyContent: 'center', paddingHorizontal: 40 }}>
                 <Caption style={{ textAlign: 'center', fontSize: 16 }}>
                     Has ingresado como invitado. Inicia sesión para conocer sobre tu contratos.
@@ -70,7 +72,10 @@ const HomeScreen = ({ navigation }) => {
                 <View>
                     {planes ?
                         <View>
-                            <Text style={styles.titulos}>{planes.length == 1 ? 'Mi Plan' : 'Mis Planes'}</Text>
+                            <View style={styles.planesContainer}>
+                                <Text style={styles.titulos}>{planes.length == 1 ? 'Mi Plan' : 'Mis Planes'}</Text>
+                                <Text style={styles.actualizarDatos} onPress={onActualizarDatos}>Actualizar datos</Text>
+                            </View>
                             <PlansCarousel />
                         </View>
                         :
@@ -79,7 +84,9 @@ const HomeScreen = ({ navigation }) => {
 
                     {beneficiarios ?
                         <View>
-                            <Text style={styles.titulos}>Mis Beneficiarios</Text>
+                            <View style={styles.beneficiariosContainer}>
+                                <Text style={styles.titulos}>Mis Beneficiarios</Text>
+                            </View>
                             <BeneficiariosCarousel />
                         </View>
                         :
@@ -158,10 +165,25 @@ const styles = StyleSheet.create({
     titulos: {
         fontSize: 20,
         fontWeight: 'bold',
-        marginBottom: 15,
         color: '#b58603',
+    },
+    actualizarDatos: {
+        fontWeight: '600',
+        color: '#b58603',
+        textDecorationLine: 'underline',
+        alignSelf: 'center'
+    },
+    beneficiariosContainer: {
+        marginBottom: 15,
         marginTop: 30,
         marginStart: 20
+    },
+    planesContainer: {
+        marginBottom: 15,
+        marginTop: 30,
+        marginHorizontal: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     }
 });
 
