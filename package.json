@@ -12,7 +12,8 @@
     "deps": "npm i && cd ios && pod install && cd .. && npx jetify",
     "android:release": "react-native run-android --variant=release",
     "release:bundle": "cd android && ./gradlew bundleRelease && cd ..",
-    "release:apk": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd .."
+    "release:apk": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd ..",
+    "code-push": "appcenter codepush release-react -a integracion-ip/los-olivos-villavicencio"
   },
   "dependencies": {
     "@eva-design/eva": "^2.0.0",
