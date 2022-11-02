@@ -53,7 +53,7 @@ const HomeScreen = ({ navigation }) => {
     const onActualizarDatos = () => Linking.openURL('https://docs.google.com/forms/d/e/1FAIpQLSfXYw2p39mLofN-XJH9tJe8OtuGDcKyfxDvd044tc9YnTCcXA/viewform')
 
     const Body = () => {
-        if (invitado === '0') {
+        if (invitado !== '0') {
             return <View style={{ flex: 1, justifyContent: 'center', paddingHorizontal: 40 }}>
                 <Caption style={{ textAlign: 'center', fontSize: 16 }}>
                     Has ingresado como invitado. Inicia sesión para conocer sobre tu contratos.
