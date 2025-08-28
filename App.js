@@ -141,20 +141,6 @@ const MyDrawer = () => {
         component={SedesScreen}
       />
       <Drawer.Screen
-        name='Afiliation'
-        options={{
-          title: 'Quiero afiliarme',
-          drawerIcon: ({ color, size }) => {
-            return <Icon
-              name='plus-circle'
-              color={color}
-              size={size}
-            />
-          }
-        }}
-        component={AfiliationScreen}
-      />
-      <Drawer.Screen
         name='Form'
         options={{
           title: 'Quiero ser contactado',
